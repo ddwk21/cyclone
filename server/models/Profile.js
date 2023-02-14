@@ -19,12 +19,7 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+  likes: [String],
 });
 
 // set up pre-save middleware to create password
