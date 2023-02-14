@@ -6,6 +6,8 @@ const articleSchema = new Schema({
     title: String,
     lastUpdated: String,
     tags: [String],
+    likes: [String],
+    likedBy: [String],
 })
 
 const Article = model('Article', articleSchema)

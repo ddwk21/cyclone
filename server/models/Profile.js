@@ -20,6 +20,7 @@ const profileSchema = new Schema({
     minlength: 5,
   },
   likes: [String],
+
 });
 
 // set up pre-save middleware to create password
@@ -40,3 +41,6 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;
+
+// TAG
+// likes, likedBy
