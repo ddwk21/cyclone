@@ -2,7 +2,7 @@ import React from 'react';
 
 const ProfileList = ({ profiles, title }) => {
   if (!profiles.length) {
-    return <h3>No Profiles Yet</h3>;
+    return <h3></h3>;
   }
 
   return (
