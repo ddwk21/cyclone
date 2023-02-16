@@ -1,7 +1,7 @@
 const { Schema, model } = require('mongoose')
 
 const articleListSchema = new Schema({
-    articles: [[]],
+    articles: [],
     category: String,
 })
 
