@@ -1,4 +1,4 @@
-function feedGen() {
+async function feedGen() {
     //choose category
     //query the xml for a random article in chosen category. Math.floor(Math.random()*articleList.length)
     //process XML with xml2js
@@ -6,10 +6,9 @@ function feedGen() {
     let category = Math.floor(Math.random()*9)
     
     //let artList = query articleList[category]
-
-
+    
+    const articleId = await fetch(`/api/rdmArticle?cat=${category}`)
     //get a random article index
-    let randomArticle = Math.floor(Math.random()*ArticleList.length)
 
     // query artList[randomArticle] and get article ID
 

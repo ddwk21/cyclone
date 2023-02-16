@@ -12,10 +12,20 @@ const typeDefs = `
     profile: Profile
   }
 
-  type ArticleList {
-    articles: []
-    category: String
+
+  type granularArticle {
+    articleId: Int
+    articleTypeId: Int
+    title: String
+    lastUpdated: String
   }
+
+  type ArticleList {
+    articles: [granularArticle]
+    category: Int
+  }
+
+
 
   type Article {
     _id: ID

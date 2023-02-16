@@ -68,11 +68,10 @@ connection.once('open', async() => {
         for (const response of responses) {
                 const jsonData = await response.json()
                 await ArticleList.create({
-                    articles: jsonData,
-                    category: responses.indexOf(response),
-                    }
-                )
+                    articles: jsonData.articles,
+                    category: responses.indexOf(response)
+                })
             }
         })
-
+        console.log('Done')
 })
