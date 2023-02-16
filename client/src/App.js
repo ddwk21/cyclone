@@ -43,6 +43,10 @@ const Burger =() => {
   return (
     <Menu>
         <Link to="/">Home</Link>
+
+        <Link to="/login">Login</Link>
+        
+        <Link to="/signup">Signup</Link>
      </Menu>
   )
 }
