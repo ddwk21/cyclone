@@ -18,6 +18,8 @@
     "concurrently": "^5.1.0"
   },
   "dependencies": {
-    "create-react-app": "^5.0.1"
+    "create-react-app": "^5.0.1",
+    "dotenv": "^16.0.3",
+    "node-fetch": "^3.3.0"
   }
 }
