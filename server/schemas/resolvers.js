@@ -12,6 +12,15 @@ const resolvers = {
     profile: async (parent, { profileId }) => {
       return Profile.findOne({ _id: profileId });
     },
+
+    articles: async (parent, args, context, info) => {
+      return Article.find()
+    },
+
+    article: async (parent, args, context, info) => {
+      return await Article.findOne(args)
+    },
+
     // By adding context to our query, we can retrieve the logged in user without specifically searching for them
     me: async (parent, args, context) => {
       if (context.user) {
@@ -31,6 +40,7 @@ const resolvers = {
 
       return { token, profile };
     },
+
     login: async (parent, { email, password }) => {
       const profile = await Profile.findOne({ email });
 
