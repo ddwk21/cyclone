@@ -16,9 +16,10 @@ const ProfileList = ({ profiles, title }) => {
               <div className="card mb-3 d-flex justify-content-center">
 
                 <div className="card-header bg-dark text-light p-2 m-0 inline-block text-center">
-                  <h4>
-                    ARTICLE TITLE TEST #2 </h4>
 
+                  <h4>
+                    ARTICLE TITLE TEST #2
+                  </h4>
                   <img src="https://via.placeholder.com/250" />
                   <br />
                   <span className="text-white" style={{ fontSize: '1rem' }}>
