@@ -21,6 +21,8 @@
   },
   "dependencies": {
     "google-auth-library": "^8.7.0",
-    "react-google-login": "^5.2.2"
+    "react-burger-menu": "^3.0.9",
+    "react-google-login": "^5.2.2",
+    "styled-components": "^5.3.6"
   }
 }
