@@ -1,10 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
+import { slide as Menu } from 'react-burger-menu'
+
 
 import Auth from '../../utils/auth';
 
-
+const Burger =() => {
+  return (
+    <Menu>
+        <Link to="/">Home</Link>
+        <br/>
+        <Link to="/login">Login</Link>
+        <br/>
+        <Link to="/signup">Signup</Link>
+     </Menu>
+  )
+}
 
 const Header = () => {
   const logout = (event) => {
@@ -20,7 +32,7 @@ const Header = () => {
           </h1>
           
         </Link>
-        
+        <Burger></Burger>
         <div>
           {Auth.loggedIn() ? (
             <>
@@ -33,12 +45,12 @@ const Header = () => {
             </>
           ) : (
             <>
-              {/* <Link className="btn btn-lg btn-primary m-2" to="/login">
+              <Link className="btn btn-lg btn-primary m-2" to="/login">
                 Login
               </Link>
               <Link className="btn btn-lg btn-light m-2" to="/signup">
                 Signup
-              </Link> */}
+              </Link>
             </>
           )}
         </div>
