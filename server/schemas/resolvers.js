@@ -58,6 +58,16 @@ const resolvers = {
       return { token, profile };
     },
 
+    addArticle: async (parent, args, context, info) => {
+      const article = await Article.create(args)
+      return article
+    },
+
+    deleteArticle: async (parent, args, context, info) => {
+      await Article.findByIdAndDelete(args._id)
+      return args._id
+    },
+
 
     // Set up mutation so a logged in user can only remove their profile and no one else's
     removeProfile: async (parent, args, context) => {
