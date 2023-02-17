@@ -2,7 +2,7 @@ import React from 'react';
 import { useQuery } from '@apollo/client';
 
 import ProfileList from '../components/ProfileList';
-import articles from '../components/Article'
+
 
 import { QUERY_PROFILES } from '../utils/queries';
 
@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-center">
-        <div className="col-12 col-md-10 my-3">
+        <div className="my-4 w-100">
           {loading ? (
             <div>Loading...</div>
           ) : (

@@ -1,64 +1,33 @@
 import React from 'react';
 
-const ProfileList = ({ profiles, title }) => {
-  if (!profiles.length) {
-    return <h3></h3>;
+const ProfileList = () => {
+
+  const divStyle = {
+    backgroundImage: 'url(' + ('https://source.unsplash.com/f9C8ytxaItI/2000x1200') + ')',
   }
 
   return (
+    <article className="post">
     <div>
-      <h3 className="text-primary">ARTICLE TITLE TEST PLACEHOLDER</h3>
-      <div className="flex-row justify-space-between my-4">
-        {profiles &&
-          profiles.map((profile) => (
-            <div key={profile._id} className="col-12 col-xl-6">
-
-              <div className="card mb-3 d-flex justify-content-center">
-
-                <div className="card-header bg-dark text-light p-2 m-0 inline-block text-center">
-
-                  <h4>
-                    ARTICLE TITLE TEST #2
-                  </h4>
-                  <img src="https://via.placeholder.com/250" />
-                  <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    ARTICLE BODY PLACEHOLDER
-                  </span>
-                </div>
-
-                <h4 className="card-header bg-dark text-light p-2 m-0">
-                  ARTICLE TITLE TEST #2 <br />
-                  <img src="https://via.placeholder.com/250" />
-                  <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    ARTICLE BODY PLACEHOLDER
-                  </span>
-                </h4>
-
-                <h4 className="card-header bg-dark text-light p-2 m-0">
-                  ARTICLE TITLE TEST #2 <br />
-                  <img src="https://via.placeholder.com/250" />
-                  <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    ARTICLE BODY PLACEHOLDER
-                  </span>
-                </h4>
-
-                <h4 className="card-header bg-dark text-light p-2 m-0">
-                  ARTICLE TITLE TEST #2 <br />
-                  <img src="https://via.placeholder.com/250" />
-                  <br />
-                  <span className="text-white" style={{ fontSize: '1rem' }}>
-                    ARTICLE BODY PLACEHOLDER
-                  </span>
-                </h4>
-
-              </div>
-            </div>
-          ))}
-      </div>
+      <div className="absolute-bg" style={divStyle}></div>
     </div>
+    <div className="post__container">
+      <span className="post__category">Michelle's Travels</span>
+      
+      <div className="post__content">
+        <header>
+          <time className="post__time">Jan 22 2017</time>
+          <h1 className="post__header"><span>Visiting</span> <span>the</span> <span>beach</span></h1>
+        </header>
+      
+        <p className="post__text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. 
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim.
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean a augue justo. In mollis erat in elit tempus, feugiat luctus ex sollicitudin. Maecenas euismod tortor dolor, vel blandit augue aliquam sit amet. Vestibulum et eros mollis, laoreet nisi ac, condimentum sapien. Aliquam nec nunc enim.</p>
+      </div>
+      
+    </div>
+  </article>
+
   );
 };
 

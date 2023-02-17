@@ -84,14 +84,14 @@
       display: flex;
       height: 100vh;
       min-height: 40em;
-   }
+   } 
   }
   .post > *:first-child {
     position: relative;
     height: 14em;
     background-color: #000;
   }
-  @media (min-width: 30em) {
+  @media (min-width: 76.5em) {
     .post > *:first-child {
       height: 18em;
    }
@@ -125,7 +125,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    padding: 2em;
+    padding: 5em;
     overflow-y: auto;
   }
   .post__category {
@@ -147,7 +147,7 @@
     animation: slide-in 1s ease-in both 0.5s;
   }
   .post__content {
-    padding: 2em 0;
+    padding: 5em 0;
   }
   @media (min-width: 54em) {
     .post__content {
