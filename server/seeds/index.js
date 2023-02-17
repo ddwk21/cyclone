@@ -7,6 +7,7 @@ connection.once('open', async() => {
 
     const keyCount = 9;
     await ArticleList.deleteMany()
+    console.log('deleted')
 
     Promise.all([
         fetch('https://syndication.api.eb.com/production/articles?articleTypeId=1&categoryId=1',
@@ -65,6 +66,7 @@ connection.once('open', async() => {
         }),
         
     ]).then(async responses => {
+        console.log('fetched')
         for (const response of responses) {
                 const jsonData = await response.json()
                 await ArticleList.create({
