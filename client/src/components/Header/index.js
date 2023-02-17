@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+// import styled from 'styled-components';
 
 import Auth from '../../utils/auth';
+
+
 
 const Header = () => {
   const logout = (event) => {
@@ -15,10 +18,9 @@ const Header = () => {
           <h1 className="m-0" style={{ fontSize: '3rem' }}>
             Encyclone
           </h1>
+          
         </Link>
-        {/* <p className="m-0" style={{ fontSize: '1.75rem', fontWeight: '700' }}>
-          Meet your new programming pals.
-        </p> */}
+        
         <div>
           {Auth.loggedIn() ? (
             <>
