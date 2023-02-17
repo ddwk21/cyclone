@@ -4,7 +4,6 @@ const {ArticleList} = require('../models')
 const env = require('dotenv').config();
 
 connection.once('open', async() => {
-
     const keyCount = 9;
     await ArticleList.deleteMany()
     console.log('deleted')
@@ -77,5 +76,10 @@ connection.once('open', async() => {
             }
             console.log('Done')
         })
-        process.exit()
+        .catch (err => {
+            console.log(err)
+        }) 
+        .finally( () => {
+            process.exit()
+        })
 })
