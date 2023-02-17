@@ -24,6 +24,7 @@ const Header = () => {
     Auth.logout();
   };
   return (
+    
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center">
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         <Link className="text-dark" to="/">
@@ -32,7 +33,7 @@ const Header = () => {
           </h1>
           
         </Link>
-        <Burger></Burger>
+        
         <div>
           {Auth.loggedIn() ? (
             <>
