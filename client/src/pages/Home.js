@@ -13,7 +13,7 @@ const Home = () => {
   return (
     <main>
       <div className="flex-row justify-center">
-        <div className="my-4 w-100">
+        <div className="my-2 w-100">
           {loading ? (
             <div>Loading...</div>
           ) : (

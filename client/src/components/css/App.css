@@ -1,12 +1,20 @@
+
+
 *, *:before, *:after {
     box-sizing: border-box;
   }
+
+  #header-container {
+    width: 100%;
+  }
+
   h1 {
     margin-top: 0;
     margin-bottom: 0.25em;
     font-size: 4em;
     font-weight: 900;
     line-height: 0.9;
+    color: #d0f2ee;
   }
   p {
     margin: 0;
@@ -128,7 +136,7 @@
     padding: 1em;
     overflow-y: auto;
   }
-  .post__category {
+  .post__title {
     position: relative;
     font-weight: 600;
     font-size: 0.9em;
@@ -136,7 +144,7 @@
     letter-spacing: 0.3em;
     overflow: hidden;
   }
-  .post__category:before {
+  .post__title:before {
     content: "";
     position: absolute;
     left: 0;
@@ -162,20 +170,20 @@
     text-transform: uppercase;
     letter-spacing: 0.1em;
   }
-  .post__header {
+  .post__author {
     overflow: hidden;
   }
-  .post__header span {
+  .post__author span {
     display: inline-block;
     animation: slide-up 0.8s ease-in-out both;
   }
-  .post__header span:nth-child(1) {
+  .post__author span:nth-child(1) {
     animation-delay: 0.1s;
   }
-  .post__header span:nth-child(2) {
+  .post__author span:nth-child(2) {
     animation-delay: 0.2s;
   }
-  .post__header span:nth-child(3) {
+  .post__author span:nth-child(3) {
     animation-delay: 0.3s;
   }
   .post__text {
