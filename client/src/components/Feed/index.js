@@ -1,16 +1,23 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import feedGen from '../../utils/feedMe'
 
 // const text = feedGen()
 
 const Feed = () => {
+    const [content, setContent] = useState('')
     const location = useLocation();
     const navigate = useNavigate();
     useEffect(() => {
-        const content = feedGen()
-        console.log(content)
-    })
+        const feedPromise = feedGen()
+        feedPromise.then((content) => {
+            console.log(content)
+            setContent(content)
+
+        })
+    }, [])
+
+
     return (
         <article className="post">
             <div>
