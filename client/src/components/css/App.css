@@ -254,12 +254,11 @@
     }
   }
 
-
+/* SignUp page styles */
   .signup-container 
    {
     position: absolute;
-    margin-top: 15em;
-    top: 50%;
+    margin-top: 14em;
     left: 50%;
     width: 400px;
     padding: 40px;
@@ -310,9 +309,7 @@
   .signup-container 
    .signup-box input:focus ~ label,
   .signup-container 
-   .signup-box input:valid ~ label,
-  .signup-container 
-   .signup-box input:active ~ label {
+   .signup-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #f7f9fb;
@@ -352,7 +349,7 @@
                 0 0 100px #f7f9fb;
   }
   
-  .login-container 
+  .signup-container 
    button span {
     position: absolute;
     display: block;
@@ -361,8 +358,7 @@
   .login-container 
    {
     position: absolute;
-    margin-top: 15em;
-    top: 50%;
+    margin-top: 12em;
     left: 50%;
     width: 400px;
     padding: 40px;
@@ -373,6 +369,7 @@
     
   }
   
+  /* Login Page Styles */
   .login-container 
    h4 {
     margin: 0 0 30px;
@@ -413,9 +410,7 @@
   .login-container 
    .login-box input:focus ~ label,
   .login-container 
-   .login-box input:valid ~ label,
-  .login-container 
-   .login-box input:active ~ label {
+   .login-box input:valid ~ label {
     top: -20px;
     left: 0;
     color: #f7f9fb;

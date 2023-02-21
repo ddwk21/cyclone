@@ -41,10 +41,10 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="signup-container card">
-          <h4 className="signup-header card-header bg-dark text-light p-2">Sign Up</h4>
+    <main className="">
+      <div className="">
+        <div className="signup-container">
+          <h4 className="signup-header">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -53,46 +53,42 @@ const Signup = () => {
               </p>
             ) : (
               <form>
-        <div className="signup-box">
-            <input 
-            className="signup-username form-input" 
-            type="text"
-            name="name" 
-            value={formState.name}
-            onChange={handleChange}
-            />
-            <label>Username</label>
-        </div>
-        <div className="signup-box">
-            <input
-            className="signup-email form-input" 
-            type="email" 
-            name="email"
-            value={formState.email}
-            onChange={handleChange}
-            />
-            <label>Email</label>
-        </div>
-        <div className="signup-box">
-            <input className="signup-password form-input"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}/>
-            <label>Password</label>
-        </div>
-        <button 
-        className="signup-btn"
+                <div className="signup-box">
+                  <input
+                    className="signup-username"
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                  />
+                  <label>Username</label>
+                </div>
+                <div className="signup-box">
+                  <input
+                    className="signup-email"
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                  <label>Email</label>
+                </div>
+                <div className="signup-box">
+                  <input className="signup-password"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange} />
+                  <label>Password</label>
+                </div>
+                <button
+                  className="signup-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
-                  >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-            Submit
-        </button>
-    </form>
+                >
+                  Submit
+                </button>
+              </form>
             )}
 
             {error && (

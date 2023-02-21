@@ -28,7 +28,7 @@ const Header = () => {
     
     <header className="bg-info text-dark mb-4 py-3 display-flex align-center" id='header-container'>
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
-        <Link className="home-link text-dark" to="/">
+        <Link className="home-link" to="/">
           <h1 className="encyclone-header m-0" style={{ fontSize: '3rem' }}>
             Encyclone
           </h1>

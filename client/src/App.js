@@ -48,6 +48,8 @@ const Burger =() => {
         <Link to="/login">Login</Link>
         <br/>
         <Link to="/signup">Signup</Link>
+        <br/>
+        <Link to="/me">Profile</Link>
      </Menu>
   )
 }
