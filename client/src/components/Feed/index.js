@@ -2,6 +2,8 @@ import React from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import { feedGen } from '../../utils/feedMe'
 
+const text = feedGen()
+
 const Feed = () => {
     const location = useLocation();
     const navigate = useNavigate();
@@ -21,7 +23,7 @@ const Feed = () => {
                         <h3 className="post__author">Author goes here</h3>
                     </header>
 
-                    <p className="post__text">{{}}</p>
+                    <p className="post__text">{{ text }}</p>
                 </div>
 
             </div>
