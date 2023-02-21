@@ -1,16 +1,20 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { feedGen } from '../../utils/feedMe'
+// import feedGen from '../../utils/feedMe'
 
-const text = feedGen()
+// const text = feedGen()
 
 const Feed = () => {
     const location = useLocation();
     const navigate = useNavigate();
+    // useEffect(() => {
+    //     const content = feedGen()
+    //     console.log(content)
+    // })
     return (
         <article className="post">
             <div>
-                <div className="absolute-bg" style={divStyle}></div>
+                <div className="absolute-bg"></div>
             </div>
             <div className="post__container">
                 <h2>
@@ -23,7 +27,7 @@ const Feed = () => {
                         <h3 className="post__author">Author goes here</h3>
                     </header>
 
-                    <p className="post__text">{{ text }}</p>
+                    <p className="post__text"></p>
                 </div>
 
             </div>
