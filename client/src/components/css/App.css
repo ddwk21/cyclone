@@ -390,3 +390,23 @@ body {
     display: none;
   }
 }
+
+::-webkit-scrollbar-track {
+  background-color: #F5F5F5;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar {
+  width: 15px;
+  background-color: #F5F5F5;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-image: -webkit-gradient(linear,
+      left bottom,
+      left top,
+      color-stop(0.44, #f7f9fb),
+      color-stop(0.72, #8fc1e3),
+      color-stop(0.86, #31708e));
+}
