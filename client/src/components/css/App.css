@@ -243,6 +243,9 @@
       display:none;
 
     }
+    .signup-container {
+      max-width: 95%;
+    }
   }
 
   @media (min-width: 426px){
@@ -344,6 +347,7 @@
     display: block;
   }
   
+ 
   
   
 
