@@ -1,16 +1,16 @@
 import React, { useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-// import feedGen from '../../utils/feedMe'
+import feedGen from '../../utils/feedMe'
 
 // const text = feedGen()
 
 const Feed = () => {
     const location = useLocation();
     const navigate = useNavigate();
-    // useEffect(() => {
-    //     const content = feedGen()
-    //     console.log(content)
-    // })
+    useEffect(() => {
+        const content = feedGen()
+        console.log(content)
+    })
     return (
         <article className="post">
             <div>
