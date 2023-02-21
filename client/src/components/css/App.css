@@ -51,7 +51,6 @@ figure {
 body {
   font-size: 102.5%;
 }
-}
 
 @media (min-width: 30em) {
   body {
@@ -297,101 +296,97 @@ body {
   100% {
     transform: translate3d(0, 0, 0);
   }
+}
 
-  .post__author {
-    overflow: hidden;
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
 
-  .post__author span {
-    display: inline-block;
-    animation: slide-up 0.8s ease-in-out both;
+  90% {
+    opacity: 1;
   }
 
-  .post__author span:nth-child(1) {
-    animation-delay: 0.1s;
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
 
-  .post__author span:nth-child(2) {
-    animation-delay: 0.2s;
+  100% {
+    opacity: 1;
+  }
+}
+
+/** * Helpers */
+.absolute-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-position: 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden;
+  animation: fade-in 0.8s ease-in-out both 1s;
+}
+
+/** * Animations */
+@keyframes slide-in {
+  0% {
+    transform: translate3d(-100%, 0, 0);
   }
 
-  .post__author span:nth-child(3) {
-    animation-delay: 0.3s;
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes slide-up {
+  0% {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
   }
 
-  .post__text {
-    font-weight: 300;
-    animation: fade-in 0.8s ease-in-out both 0.5s;
+  90% {
+    opacity: 1;
   }
 
-  .post__link {
-    text-align: right;
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    opacity: 0;
   }
 
-  /** * Helpers */
-  .absolute-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background-position: 50%;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow: hidden;
-    animation: fade-in 0.8s ease-in-out both 1s;
+  100% {
+    opacity: 1;
   }
+}
 
-  /** * Animations */
-  @keyframes slide-in {
-    0% {
-      transform: translate3d(-100%, 0, 0);
-    }
+.logo {
+  height: 5em;
+}
 
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
+@media (max-width: 425px) {
+  .encyclone-header {
+
+    display: none;
+
   }
+}
 
-  @keyframes slide-up {
-    0% {
-      opacity: 0;
-      transform: translate3d(0, 100%, 0);
-    }
-
-    90% {
-      opacity: 1;
-    }
-
-    100% {
-      transform: translate3d(0, 0, 0);
-    }
-  }
-
-  @keyframes fade-in {
-    0% {
-      opacity: 0;
-    }
-
-    100% {
-      opacity: 1;
-    }
-  }
-
+@media (min-width: 426px) {
   .logo {
-    height: 5em;
+    display: none;
   }
-
-  @media (max-width: 425px) {
-    .encyclone-header {
-
-      display: none;
-
-    }
-  }
-
-  @media (min-width: 426px) {
-    .logo {
-      display: none;
-    }
-  }
+}
