@@ -4,7 +4,6 @@ const {ArticleList} = require('../models')
 const env = require('dotenv').config();
 
 connection.once('open', async() => {
-
     const keyCount = 9;
     await ArticleList.deleteMany()
     console.log('deleted')
@@ -68,12 +67,19 @@ connection.once('open', async() => {
     ]).then(async responses => {
         console.log('fetched')
         for (const response of responses) {
+            console.log(response)
                 const jsonData = await response.json()
                 await ArticleList.create({
                     articles: jsonData.articles,
                     category: responses.indexOf(response)
                 })
             }
+            console.log('Done')
         })
-        console.log('Done')
+        .catch (err => {
+            console.log(err)
+        }) 
+        .finally( () => {
+            process.exit()
+        })
 })
