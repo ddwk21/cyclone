@@ -1,14 +1,14 @@
-const { XMLParser, XMLBuilder, XMLValidator} = require("fast-xml-parser");
+const { XMLParser, XMLBuilder, XMLValidator } = require("fast-xml-parser");
 
 async function feedGen() {
     //choose category
     //query the xml for a random article in chosen category. Math.floor(Math.random()*articleList.length)
     //process XML with xml2js
     //return processed text
-    let category = Math.floor(Math.random()*9)
-    
+    let category = Math.floor(Math.random() * 9)
+
     //let artList = query articleList[category]
-    
+
     const articleId = await fetch(`/rdmArticle?cat=${category}`)
     //get a random article index
 
@@ -16,36 +16,37 @@ async function feedGen() {
 
     const content = await getXML(category, articleId)
 
-    retun(content)
+    return (content)
 
 }
 
-async function getXML(category, articleID){
+async function getXML(category, articleID) {
     let catID
-    
-        if(category == 0) {catID = "process.env.ART_KEY"
-    }else if(category == 8){ 
+
+    if (category == 0) {
+        catID = "process.env.ART_KEY"
+    } else if (category == 8) {
         catID = "process.env.ANIMAL_KEY"
-    }else if(category == 2||4){
+    } else if (category == 2 || 4) {
         catID == "process.env.PEOPLE_EVENT_KEY"
-    }else if(category == 5){
+    } else if (category == 5) {
         catID == "process.env.PLANT_KEY"
-    }else if(category == 7||3){
+    } else if (category == 7 || 3) {
         catID == "process.env.SPORT_TECHNOLOGY_KEY"
-    }else if(category == 1){
+    } else if (category == 1) {
         catID == "process.env.SCIENCE_KEY"
-    }else if(category == 6){
+    } else if (category == 6) {
         catID == "process.env.PLACE_KEY"
     }
 
 
 
-let XML = await fetchXml(articleID, catID)
-return(XML)
+    let XML = await fetchXml(articleID, catID)
+    return (XML)
 }
 
 
- 
+
 const xmlParserOptions = {
     ignoreAttributes: false,
     parseAttributeValue: true,
@@ -57,20 +58,20 @@ const parser = new XMLParser(xmlParserOptions);
 
 function fetchXml(articleID, catID) {
     fetch(`https://syndication.api.eb.com/production/article/${articleID}/xml`,
-    {
-        headers: {
-            'x-api-key': catID,
-        }
-    }
-    )
-    .then(
-        async (response) => {
-          const body = await (response.text())
-          console.log(body)
-          return(parser.parse(body))
+        {
+            headers: {
+                'x-api-key': catID,
+            }
         }
     )
-    .then((data) => console.log(data.article))
+        .then(
+            async (response) => {
+                const body = await (response.text())
+                console.log(body)
+                return (parser.parse(body))
+            }
+        )
+        .then((data) => console.log(data.article))
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
