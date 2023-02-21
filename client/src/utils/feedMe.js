@@ -39,13 +39,9 @@ async function getXML(category, articleID) {
         catID == "process.env.PLACE_KEY"
     }
 
-
-
     let XML = await fetchXml(articleID, catID)
     return (XML)
 }
-
-
 
 const xmlParserOptions = {
     ignoreAttributes: false,
@@ -75,11 +71,7 @@ function fetchXml(articleID, catID) {
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
-
-export default feedGen
-
-
-
+export default feedGen()
 
 //if .assembly >> image display logic
 
