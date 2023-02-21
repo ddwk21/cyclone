@@ -14,7 +14,9 @@ async function feedGen() {
 
     // query artList[randomArticle] and get article ID
 
-    await getXML(category, articleId)
+    const content = await getXML(category, articleId)
+
+    return(content)
 
 }
 
@@ -38,8 +40,8 @@ async function getXML(category, articleID){
 
 
 
-let XML = await fetchXml(articleID, catID)
-return(XML)
+    let XML = await fetchXml(articleID, catID)
+    return(XML)
 }
 
 
@@ -72,6 +74,8 @@ function fetchXml(articleID, catID) {
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
+
+export default feedGen
 
 
 
