@@ -71,7 +71,7 @@ function fetchXml(articleID, catID) {
                 return (parser.parse(body))
             }
         )
-        .then((data) => console.log(data.article))
+        .then((data) => { return (data.article.p[0]['@_text']) })
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
