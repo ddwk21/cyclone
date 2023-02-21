@@ -899,7 +899,7 @@ a:hover {
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  color: #F7F9FB !important;
 }
 
 .text-dark {
@@ -937,7 +937,7 @@ a:hover {
 }
 
 .bg-dark {
-  background-color: #1a1a1a !important;
+  background-color: #8fc1e3 !important;
 }
 
 .bg-white {
@@ -1030,14 +1030,6 @@ a:hover {
   background-color: #ee8294;
 }
 
-.btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
-}
-
-.btn.btn-info:hover {
-  background-color: #31e1bd;
-}
 
 .btn.btn-light {
   background-color: #d9e9e8;
@@ -1121,7 +1113,7 @@ form .form-group {
   margin: 0.625rem 0;
 }
 
-form .form-input,
+form ,
 form .form-textarea {
   display: block;
 }
@@ -1135,14 +1127,14 @@ form select {
   background-position-y: 50%;
 }
 
-form label,
+/* form label,
 form .form-label {
   display: inline-block;
   font-size: 1.2rem;
   margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
-form .form-input {
+form  {
   width: 100%;
   padding: 0.75rem;
   color: #1a1a1a;
@@ -1151,11 +1143,11 @@ form .form-input {
   font-size: 1.2rem;
   border: 1px solid #484848;
   border-radius: 0.3rem;
-}
+} */
 
-form .form-input.form-input-squared {
+/* form -squared {
   border-radius: 0;
-}
+} */
 
 form [type='checkbox'],
 form [type='radio'] {

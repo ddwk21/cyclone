@@ -27,7 +27,7 @@
     transition: all 0.3s ease-in;
   }
   a:hover, a:active, a:focus {
-    color: #fff;
+    color: #f7f9fb;
     background-color: #a9b1b3;
   }
   figure {
@@ -35,7 +35,7 @@
   }
   /** * Text Selection */
   ::selection {
-    color: #fff;
+    color: #f7f9fb;
     background-color: #d0f2ee;
     text-shadow: none;
   }
@@ -45,7 +45,7 @@
     font-size: 100%;
     line-height: 1.6;
     color: #000;
-    background-color: #fff;
+    background-color: #f7f9fb;
   }
   @media (min-width: 20em) {
     body {
@@ -81,7 +81,7 @@
   .post {
     min-height: 100vh;
     width: 100%;
-    border: 0.5em solid #fff;
+    border: 0.5em solid #f7f9fb;
   }
   @media (min-width: 54em) {
     .post {
@@ -250,3 +250,102 @@
       display:none;
     }
   }
+
+
+  .signup-container {
+    position: absolute;
+    margin-top: 15em;
+    top: 50%;
+    left: 50%;
+    width: 400px;
+    padding: 40px;
+    transform: translate(-50%, -50%);
+    background: #8fc1e3;
+    box-sizing: border-box;
+    box-shadow: 0 15px 25px rgba(0,0,0,.6);
+    
+  }
+  
+  .signup-container h4 {
+    margin: 0 0 30px;
+    padding: 0;
+    color: #f7f9fb;
+    text-align: center;
+  }
+  
+  .signup-container .signup-box {
+    position: relative;
+  }
+  
+  .signup-container .signup-box input {
+    width: 100%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #f7f9fb;
+    margin-bottom: 30px;
+    border: none;
+    border-bottom: 1px solid #f7f9fb;
+    outline: none;
+    background: transparent;
+  }
+  .signup-container .signup-box label {
+    position: absolute;
+    top:0;
+    left: 0;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #f7f9fb;
+    pointer-events: none;
+    transition: .5s;
+  }
+  
+  .signup-container .signup-box input:focus ~ label,
+  .signup-container .signup-box input:valid ~ label,
+  .signup-container .signup-box input:active ~ label {
+    top: -20px;
+    left: 0;
+    color: #f7f9fb;
+    font-size: 12px;
+  }
+
+
+  
+  .signup-container form button {
+    position: relative;
+    display: inline-block;
+    padding: 10px 20px;
+    color: #f7f9fb;
+    font-size: 16px;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow: hidden;
+    transition: .5s;
+    margin-top: 40px;
+    letter-spacing: 4px;
+    background-color: #31708e;
+    border-style: none;
+    width: 100%;
+  }
+
+  
+  
+  .signup-container button:hover {
+    background: #5085a5;
+    color: #f7f9fb;
+    border-radius: 5px;
+    box-shadow: 0 0 5px #f7f9fb,
+                0 0 25px #f7f9fb,
+                0 0 50px #f7f9fb,
+                0 0 100px #f7f9fb;
+  }
+  
+  .signup-container button span {
+    position: absolute;
+    display: block;
+  }
+  
+  
+  
+
+  
+  
