@@ -99,4 +99,43 @@ const Signup = () => {
   );
 };
 
+
+
+// import { GoogleLogin } from 'react-google-login';
+
+// function SignupPage() {
+//   const responseGoogle = (response) => {
+//     console.log(response);
+//   };
+
+//   return (
+//     <div>
+//       <h1>Signup Page</h1>
+//       <GoogleLogin
+//         clientId="YOUR_CLIENT_ID"
+//         buttonText="Signup with Google"
+//         onSuccess={responseGoogle}
+//         onFailure={responseGoogle}
+//         cookiePolicy={'single_host_origin'}
+//       />
+//     </div>
+//   );
+// }
+
+
+
+
+// const responseGoogle = (response) => {
+//   console.log(response);
+//   const profile = response.profileObj;
+//   const user = {
+//     name: profile.name,
+//     email: profile.email,
+//     image: profile.imageUrl,
+//     provider: 'google',
+//     providerId: profile.googleId,
+//   };
+//   // Call your signup API to create a new user account
+// };
+
 export default Signup;
