@@ -9,9 +9,9 @@ async function feedGen() {
 
     //let artList = query articleList[category]
 
-    const articleId = await fetch(`/rdmArticle?cat=${category}`)
+    const response = await fetch(`/rdmArticle?cat=${category}`)
     //get a random article index
-
+    const articleId = await response.json()
     // query artList[randomArticle] and get article ID
 
     const content = await getXML(category, articleId)
@@ -22,23 +22,21 @@ async function feedGen() {
 
 async function getXML(category, articleID) {
     let catID
-
     if (category == 0) {
-        catID = "process.env.ART_KEY"
+        catID = process.env.REACT_APP_ART_KEY
     } else if (category == 8) {
-        catID = "process.env.ANIMAL_KEY"
-    } else if (category == 2 || 4) {
-        catID = "process.env.PEOPLE_EVENT_KEY"
+        catID = process.env.REACT_APP_ANIMAL_KEY
+    } else if (category == 2 || category == 4) {
+        catID = process.env.REACT_APP_PEOPLE_EVENT_KEY
     } else if (category == 5) {
-        catID = "process.env.PLANT_KEY"
-    } else if (category == 7 || 3) {
-        catID = "process.env.SPORT_TECHNOLOGY_KEY"
+        catID = process.env.REACT_APP_PLANT_KEY
+    } else if (category == 7 || category == 3) {
+        catID = process.env.REACT_APP_SPORT_TECHNOLOGY_KEY
     } else if (category == 1) {
-        catID = "process.env.SCIENCE_KEY"
+        catID = process.env.REACT_APP_SCIENCE_KEY
     } else if (category == 6) {
-        catID = "process.env.PLACE_KEY"
+        catID = process.env.REACT_APP_PLACE_KEY
     }
-
     let XML = await fetchXml(articleID, catID)
     return (XML)
 }

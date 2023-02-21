@@ -4,8 +4,6 @@ const { ArticleList } = require('../models');
 router.get('/', async (req, res) => {
     try {
         let list = await ArticleList.findOne({ 'category': req.query.cat })
-        list = list.toObject()
-        console.log(list)
         let id = list.articles[Math.floor(Math.random() * (list.articles.length - 1))].articleId//get random index of category
         res.json(id)
     } catch (err) {
