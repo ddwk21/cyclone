@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, { useState } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -16,7 +16,7 @@ import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { slide as Menu } from 'react-burger-menu'
-import  { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 
 const httpLink = createHttpLink({
@@ -40,20 +40,17 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const Burger =() => {
+const Burger = () => {
   return (
     <Menu>
-        <Link to="/">Home</Link>
-        <br/>
-        <Link to="/login">Login</Link>
-        <br/>
-        <Link to="/signup">Signup</Link>
-     </Menu>
+      <Link to="/">Home</Link>
+      <br />
+      <Link to="/login">Login</Link>
+      <br />
+      <Link to="/signup">Signup</Link>
+    </Menu>
   )
 }
-
-
-
 
 function App() {
   return (
@@ -61,7 +58,7 @@ function App() {
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
-    <Burger></Burger>
+          <Burger></Burger>
           <div className="container">
             <Routes>
               <Route
