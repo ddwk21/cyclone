@@ -12,7 +12,6 @@ const typeDefs = `
     profile: Profile
   }
 
-
   type granularArticle {
     articleId: Int
     articleTypeId: Int
@@ -24,8 +23,6 @@ const typeDefs = `
     articles: [granularArticle]
     category: Int
   }
-
-
 
   type Article {
     _id: ID
@@ -44,6 +41,7 @@ const typeDefs = `
     articles: [Article]
     article(articleId: Int): Article
     me: Profile
+    articleLists: [ArticleList]
   }
 
   type Mutation {

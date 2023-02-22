@@ -9,9 +9,9 @@ async function feedGen() {
 
     //let artList = query articleList[category]
 
-    const articleId = await fetch(`/rdmArticle?cat=${category}`)
+    const response = await fetch(`/rdmArticle?cat=${category}`)
     //get a random article index
-
+    const articleId = await response.json()
     // query artList[randomArticle] and get article ID
 
     const content = await getXML(category, articleId)
@@ -22,23 +22,21 @@ async function feedGen() {
 
 async function getXML(category, articleID) {
     let catID
-
     if (category == 0) {
-        catID = "process.env.ART_KEY"
+        catID = process.env.REACT_APP_ART_KEY
     } else if (category == 8) {
-        catID = "process.env.ANIMAL_KEY"
-    } else if (category == 2 || 4) {
-        catID == "process.env.PEOPLE_EVENT_KEY"
+        catID = process.env.REACT_APP_ANIMAL_KEY
+    } else if (category == 2 || category == 4) {
+        catID = process.env.REACT_APP_PEOPLE_EVENT_KEY
     } else if (category == 5) {
-        catID == "process.env.PLANT_KEY"
-    } else if (category == 7 || 3) {
-        catID == "process.env.SPORT_TECHNOLOGY_KEY"
+        catID = process.env.REACT_APP_PLANT_KEY
+    } else if (category == 7 || category == 3) {
+        catID = process.env.REACT_APP_SPORT_TECHNOLOGY_KEY
     } else if (category == 1) {
-        catID == "process.env.SCIENCE_KEY"
+        catID = process.env.REACT_APP_SCIENCE_KEY
     } else if (category == 6) {
-        catID == "process.env.PLACE_KEY"
+        catID = process.env.REACT_APP_PLACE_KEY
     }
-
     let XML = await fetchXml(articleID, catID)
     return (XML)
 }
@@ -52,26 +50,22 @@ const xmlParserOptions = {
 const parser = new XMLParser(xmlParserOptions);
 // const builder = new XMLBuilder();
 
-function fetchXml(articleID, catID) {
-    fetch(`https://syndication.api.eb.com/production/article/${articleID}/xml`,
+async function fetchXml(articleID, catID) {
+    const response = await fetch(`https://syndication.api.eb.com/production/article/${articleID}/xml`,
         {
             headers: {
                 'x-api-key': catID,
             }
         }
     )
-        .then(
-            async (response) => {
-                const body = await (response.text())
-                console.log(body)
-                return (parser.parse(body))
-            }
-        )
-        .then((data) => { return (data.article.p[0]['@_text']) })
+    const body = await (response.text())
+    console.log(body)
+    const data = await parser.parse(body)
+    return (data.article.p[0]['@_text'])
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
-export default feedGen()
+export default feedGen
 
 //if .assembly >> image display logic
 
