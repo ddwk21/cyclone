@@ -314,9 +314,8 @@
   }
   
   .signup-container 
-   .signup-box input:focus ~ label,
-  .signup-container 
-   .signup-box input:valid ~ label {
+   .signup-box label
+  {
     top: -20px;
     left: 0;
     color: #f7f9fb;
@@ -415,9 +414,7 @@
   }
   
   .login-container 
-   .login-box input:focus ~ label,
-  .login-container 
-   .login-box input:valid ~ label {
+   .login-box label {
     top: -20px;
     left: 0;
     color: #f7f9fb;
