@@ -5,6 +5,7 @@ import ProfileList from '../components/ArticleFeed';
 
 
 import { QUERY_PROFILES } from '../utils/queries';
+import Feed from '../components/Feed';
 
 const Home = () => {
   const { loading, data } = useQuery(QUERY_PROFILES);
@@ -16,11 +17,13 @@ const Home = () => {
         <div className="my-2 w-100">
           {loading ? (
             <div>Loading...</div>
-          ) : (
+          ) : (<>
             <ProfileList
               profiles={profiles}
               title="This is a test section for the article loading area"
             />
+            <Feed />
+          </>
           )}
         </div>
       </div>
