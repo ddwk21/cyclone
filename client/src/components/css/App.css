@@ -14,20 +14,21 @@
   }
   p {
     margin: 0;
-    color: #a9b1b3;
+    color: #505d60;
   }
   a {
     padding: 0.5em 1em;
     font-size: 0.8em;
-    color: #a9b1b3;
+    color: #f7f9fb;
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.3em;
     transition: all 0.3s ease-in;
   }
-  a:hover, a:active, a:focus {
-    color: #f7f9fb;
-    background-color: #a9b1b3;
+  a:hover {
+    color: #31708E;
+    background-color: #87B3AF;
+    
   }
   figure {
     margin: 0;

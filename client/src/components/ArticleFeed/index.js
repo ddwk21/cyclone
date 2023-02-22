@@ -11,7 +11,7 @@ const ProfileList = () => {
   return (
     <article className="post">
     <div>
-      <div className="absolute-bg" style={divStyle}></div>
+      <div className="absolute-bg" alt='' style={divStyle}></div>
     </div>
     <div className="post__container">
       <h2>

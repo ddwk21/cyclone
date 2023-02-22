@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 // import styled from 'styled-components';
-import { slide as Menu } from 'react-burger-menu'
+// import { slide as Menu } from 'react-burger-menu'
 import logo from "../../assets/encyclone-logo.png"
 
 
@@ -51,7 +51,7 @@ const Header = () => {
           <h1 className="encyclone-header m-0" style={{ fontSize: '3rem' }}>
             Encyclone
           </h1>
-          <img className="logo" src={logo}></img>
+          <img className="logo" alt='booknado' src={logo}></img>
 
         </Link>
 
