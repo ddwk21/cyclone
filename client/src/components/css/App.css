@@ -350,10 +350,10 @@
     background: #5085a5;
     color: #f7f9fb;
     border-radius: 5px;
-    box-shadow: 0 0 5px #f7f9fb,
-                0 0 25px #f7f9fb,
-                0 0 50px #f7f9fb,
-                0 0 100px #f7f9fb;
+    box-shadow: 0 0 5px #8fc1e3,
+                0 0 25px #8fc1e3,
+                0 0 50px #8fc1e3,
+                0 0 100px #8fc1e3;
   }
   
   .signup-container 
@@ -451,10 +451,10 @@
     background: #5085a5;
     color: #f7f9fb;
     border-radius: 5px;
-    box-shadow: 0 0 5px #f7f9fb,
-                0 0 25px #f7f9fb,
-                0 0 50px #f7f9fb,
-                0 0 100px #f7f9fb;
+    box-shadow: 0 0 5px #8fc1e3,
+                0 0 25px #8fc1e3,
+                0 0 50px #8fc1e3,
+                0 0 100px #8fc1e3;
   }
   
   .login-container 
