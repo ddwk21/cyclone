@@ -11,8 +11,6 @@ const Feed = () => {
     useEffect(() => {
         const feedPromise = feedGen()
         feedPromise.then((content) => {
-            const title = content.title
-            console.log(title)
             console.log(content)
             setContent(content)
 
@@ -27,13 +25,13 @@ const Feed = () => {
             </div>
             <div className="post__container">
                 <h2>
-                    <span className="post__title">{content.title}</span>
+                    <span className="post__title"></span>
                 </h2>
 
                 <div className="post__content">
                     <header>
-                        <time className="post__time">{content['@_lastupdate']}</time>
-                        <h3 className="post__author">{content.copyright}</h3>
+                        <time className="post__time"></time>
+                        <h3 className="post__author"></h3>
                     </header>
 
                     <p className="post__text"></p>

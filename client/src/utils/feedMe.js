@@ -102,6 +102,7 @@ async function fetchXml(articleID, catID) {
     let mediaUrls = checkMedia()
     // if(data2.article.p[0].assembly){
     //     mediaUrl = baseMediaUrl+data2.article.p[0].assembly.media['@_url']
+    console.log(data)
     console.log(mediaUrls)
     if(mediaUrls){
         return (data.document.text, mediaUrls)
