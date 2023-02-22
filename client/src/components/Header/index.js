@@ -44,7 +44,7 @@ const Header = () => {
   // };
   return (
 
-    <header className="bg-info text-dark mb-4 py-3 display-flex align-center" id='header-container'>
+    <header className="header-container bg-info text-dark mb-4 py-3 display-flex align-center">
       {/* <Burger></Burger> */}
       <div className="container flex-column justify-space-between-lg justify-center align-center text-center">
         <Link className="home-link" to="/">
