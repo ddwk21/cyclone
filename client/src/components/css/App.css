@@ -23,7 +23,6 @@
     text-decoration: none;
     text-transform: uppercase;
     letter-spacing: 0.3em;
-    border: 1px solid #a9b1b3;
     transition: all 0.3s ease-in;
   }
   a:hover, a:active, a:focus {
@@ -46,6 +45,8 @@
     line-height: 1.6;
     color: #000;
     background-color: #f7f9fb;
+    max-width: 100%;
+  overflow-x: hidden;
   }
   @media (min-width: 20em) {
     body {
@@ -77,6 +78,11 @@
       font-size: 125%;
    }
   }
+
+  .burger-container Link {
+    width: 100%;
+  }
+
   /** * Components */
   .post {
     min-height: 100vh;

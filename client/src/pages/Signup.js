@@ -52,7 +52,7 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form>
+              <form onSubmit={handleFormSubmit} >
                 <div className="signup-box">
                   <input
                     className="signup-username"

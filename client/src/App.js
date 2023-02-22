@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -17,7 +17,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { slide as Menu } from 'react-burger-menu'
 import  { Link } from 'react-router-dom'
-
+import Auth from './utils/auth';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -40,20 +40,39 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
-const Burger =() => {
+const Burger = () => {
+  const logout = (event) => {
+    event.preventDefault();
+    Auth.logout();
+  };
   return (
-    <Menu>
+
+    <Menu className='burger-container'>
+      {Auth.loggedIn() ? (
+        <>
         <Link to="/">Home</Link>
-        <br/>
-        <Link to="/login">Login</Link>
-        <br/>
-        <Link to="/signup">Signup</Link>
-        <br/>
+        <br />
+        <br />
+        <Link onClick={logout}>Logout</Link>
+        <br />
+        <br />
         <Link to="/me">Profile</Link>
-     </Menu>
+      </>
+      ) : (
+        <>
+          <Link to="/">Home</Link>
+          <br />
+          <br />
+          <Link to="/login">Login</Link>
+          <br />
+          <br />
+          <Link to="/signup">Signup</Link>
+        </>
+      )}
+    </Menu>
+
   )
 }
-
 
 
 
