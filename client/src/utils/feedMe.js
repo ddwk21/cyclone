@@ -61,7 +61,8 @@ async function fetchXml(articleID, catID) {
     const body = await (response.text())
     console.log(body)
     const data = await parser.parse(body)
-    return (data.article.p[0]['@_text'])
+    console.log(data)
+    return (data.article)
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 

@@ -8,12 +8,7 @@
     "start": "node server.js",
     "watch": "nodemon",
     "seed": "node seeds/index.js",
-<<<<<<< HEAD
-    "dev": "npx nodemon server.js",
-    "seed": "node seeds"
-=======
     "dev": "npx nodemon server.js"
->>>>>>> e3947be87c648a945a17ebf124647e9299e2b61b
   },
   "keywords": [],
   "author": "",
