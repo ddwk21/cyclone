@@ -1,4 +1,10 @@
-const { XMLParser, XMLBuilder, XMLValidator } = require("fast-xml-parser");
+import xmlExtract from "xml-extract";
+
+const { XMLParser } = require("fast-xml-parser");
+const { parseXml } = require('@rgrove/parse-xml');
+const XMLExtract = require('xml-extract');
+
+const baseMediaUrl = 'https://cdn.britannica.com'
 
 async function feedGen() {
     //choose category
@@ -37,11 +43,13 @@ async function getXML(category, articleID) {
     } else if (category == 6) {
         catID = process.env.REACT_APP_PLACE_KEY
     }
+    console.log(catID)
     let XML = await fetchXml(articleID, catID)
     return (XML)
 }
 
 const xmlParserOptions = {
+    // preserveOrder: true,
     ignoreAttributes: false,
     parseAttributeValue: true,
     // attributeNamePrefix : "@_",
@@ -51,6 +59,7 @@ const parser = new XMLParser(xmlParserOptions);
 // const builder = new XMLBuilder();
 
 async function fetchXml(articleID, catID) {
+    console.log(articleID)
     const response = await fetch(`https://syndication.api.eb.com/production/article/${articleID}/xml`,
         {
             headers: {
@@ -60,8 +69,43 @@ async function fetchXml(articleID, catID) {
     )
     const body = await (response.text())
     console.log(body)
-    const data = await parser.parse(body)
-    return (data.article.p[0]['@_text'])
+    const data2 = await parser.parse(body)
+    const data = parseXml(body)
+    // const media = xmlExtract(body, 'media', true, (error, element) => {
+    //     if(error){
+    //         throw new Error(error)
+    //     }
+    // })
+    console.log(data2.article.p)
+    console.log(data.document.text)
+    
+    // let snowballStr = '';
+    // for(let i; i<data.length; i++){
+
+    //     if(data[i] )
+
+    // }
+
+    function checkMedia() {
+        let urlCollection = [];
+        for(let i = 0; i < data2.article.p.length; i++)
+        {
+            if(data2.article.p[i].assembly?.media['@_url']) {
+                urlCollection.push(data2.article.p[i].assembly?.media['@_url'])
+            }
+        }
+        console.log(urlCollection)
+        return(urlCollection)
+    
+    }
+
+    let mediaUrls = checkMedia()
+    // if(data2.article.p[0].assembly){
+    //     mediaUrl = baseMediaUrl+data2.article.p[0].assembly.media['@_url']
+    console.log(mediaUrls)
+    if(mediaUrls){
+        return (data.document.text, mediaUrls)
+    }else return (data)
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 
