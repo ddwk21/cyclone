@@ -22,7 +22,7 @@
     "graphql": "^16.6.0",
     "jsonwebtoken": "^8.5.1",
     "mongoose": "^6.9.1",
-    "node-fetch": "^3.3.0"
+    "node-fetch": "^2.6.9"
   },
   "devDependencies": {
     "nodemon": "^2.0.3"

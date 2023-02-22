@@ -14,12 +14,13 @@ const Home = () => {
         <div className="my-2 w-100">
           {loading ? (
             <div>Loading...</div>
-          ) : (
+          ) : (<>
             <ProfileList
               profiles={profiles}
               title="This is a test section for the article loading area"
             />
-            <Feed/>
+            <Feed />
+          </>
           )}
         </div>
       </div>
