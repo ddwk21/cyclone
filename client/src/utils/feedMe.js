@@ -91,7 +91,8 @@ async function fetchXml(articleID, catID) {
         for(let i = 0; i < data2.article.p.length; i++)
         {
             if(data2.article.p[i].assembly?.media['@_url']) {
-                urlCollection.push(data2.article.p[i].assembly?.media['@_url'])
+                console.log('IF')
+                urlCollection.push(baseMediaUrl+data2.article.p[i].assembly?.media['@_url'])
             }
         }
         console.log(urlCollection)
