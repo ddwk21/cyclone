@@ -1850,11 +1850,32 @@ Note: Beware of modifying this element as it can break the animations - you shou
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  justify-content: center;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.bm-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.bm-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Styling of overlay */
