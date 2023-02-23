@@ -13,7 +13,7 @@ const Article = (props) => {
     const [deleteArticle] = useMutation(DELETE_ARTICLE)
     
     let imgSrc;
-    if(props.data[5].length>=5){
+    if(props.data[5][0]){
         imgSrc = props.data[5]
     }else{
         imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1920px-Grosser_Panda.JPG'
@@ -48,7 +48,7 @@ const Article = (props) => {
         <div id='whole-container'>
             <article className="post">
                 <div>
-                    <img src={props.data[5]} className="absolute-bg" />
+                    <img src={imgSrc} className="absolute-bg" />
                 </div>
                 <div className="post__container">
                     <h2>
