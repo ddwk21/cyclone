@@ -1,6 +1,8 @@
 const { Schema, model } = require('mongoose');
 const bcrypt = require('bcrypt');
 
+const articleSchema = require('./Article')
+
 const profileSchema = new Schema({
   name: {
     type: String,
@@ -19,12 +21,8 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+  likes: [articleSchema],
+
 });
 
 // set up pre-save middleware to create password
@@ -45,3 +43,6 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;
+
+// TAG
+// likes, likedBy

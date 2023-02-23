@@ -3,9 +3,6 @@ import React from 'react';
 import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 
-import SkillsList from '../components/SkillsList';
-import SkillForm from '../components/SkillForm';
-
 import { QUERY_SINGLE_PROFILE, QUERY_ME } from '../utils/queries';
 
 import Auth from '../utils/auth';
@@ -36,8 +33,7 @@ const Profile = () => {
   if (!profile?.name) {
     return (
       <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        Please log in or sign in to view your profile.
       </h4>
     );
   }
@@ -45,19 +41,10 @@ const Profile = () => {
   return (
     <div>
       <h2 className="card-header">
-        {profileId ? `${profile.name}'s` : 'Your'} friends have endorsed these
-        skills...
+        PROFILE TEST HEADER
       </h2>
-
-      {profile.skills?.length > 0 && (
-        <SkillsList
-          skills={profile.skills}
-          isLoggedInUser={!profileId && true}
-        />
-      )}
-
       <div className="my-4 p-4" style={{ border: '1px dotted #1a1a1a' }}>
-        <SkillForm profileId={profile._id} />
+        TEST PROFILE DIV
       </div>
     </div>
   );

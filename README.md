@@ -1,28 +1,212 @@
-# Pass JWT to Resolver with Context (Server-side)
+# -**Encyclone**- <br> Endlessly Browse the Great Encyclopedia Britannica
 
-In this demo, you will verify if a token is valid and carry
+## Description
 
-## Instructions
+Ever find yourself going down rabbit holes of encyclopedia articles? Encyclone lets you endlessly scroll through articles based off nine categories, populating the page with relevant media and text from the Enclopedia Britannica's very own API. You can like and save articles of particular interest to your profile, so you can revisit them again in the future. 
 
-* Run `npm install` and `npm run seed` to set up the database.
+## Table of Contents
+- [Installation](#installation)
+- [Usage](#usage)
+- [Badges](#badges)
+- [Features](#features)
+- [Credits](#credits)
+- [License](#license)
 
-* Open [server.js](server/server.js) and explain the following:
+## Installation
 
-  * We can add another option to our Apollo Server configuration called `context`, which is a lot like middleware in Express.
+Encyclone can be found deployed on Heroku at the following link: </br>
+=> [Encyclone](Add Heroku Link Here) <= 
 
-  * This will allow us to intercept any request to the server and check if there's a valid JWT before the request gets to the resolver.
+## Usage
 
-* Open [auth.js](server/utils/auth.js) and explain the `authMiddleware` function:
+Within Encyclone you are able to navigate the pages using the hamburger menu in the top left. From there you can see the homepage, profile, signup and login pages. 
 
-  * Whenever we make a request to our server, we will check if there's a token with the request and attempt to verify and decode it if there is.
+Visiting the site for the first time allows users to login or sign up.
+![login](add image of login page view)
 
-  * We use the `return` statement to return the `req` object, either modified with user data or not modified at all, and the request will continue to go to its intended resolver function.
+The homepage allows the user to endlessly scroll through encyclopedia entries.
+![home page](add image of home page view)
 
-* Open [resolvers.js](server/schemas/resolvers.js) and explain the following:
+The profile page allows a user to review encyclopedia entries that they have liked and saved.
+![profile page](add image of home page view)
 
-  * Any time we need to implement authentication on a query or mutation, we can add a third parameter called `context` to the resolver function.
+## Badges
 
-  * The `context` object is whatever has been returned from our `authMiddleware` function, so it may or may not include a `user` property depending on the status of the JSON Web Token.
+![badmath](https://img.shields.io/github/languages/top/lernantino/badmath)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
+![MIT](https://img.shields.io/badge/license-MIT-green)
 
-  * If there is a `user` property, we can assume the user's token has been verified and the `user` property now holds data about the user that we stored in the token itself.
+## Features
+- Endless Scrolling
+    - Seamless scrolling so you can keep browsing articles without any interruptions.
+<br>
+- Like and Save
+    - When you see an article you like, give it a thumbs up and it will save the article to your profile. 
 
+## Credits
+[@ddwk21](https://github.com/ddwk21) - Mitchell Lemieux<br>
+[@Krenbot](https://github.com/Krenbot) - Steven Krenn<br>
+[@JeremyBukofzer](https://github.com/JeremyBukofzer) - Jeremy Bukofzer<br>
+[@richiethie](https://github.com/richiethie) - Richie Thiesfeldt<br>
+[@Hunter-Mayer](https://github.com/Hunter-Mayer) - Hunter Mayer
+
+___
+## License
+
+MIT License
+
+Copyright (c) 2023<br>
+Steven Krenn/Mitchell Lemieux/Jeremy Bukofzer/Richie Thiesfeldt/Hunter Mayer
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+___
+## How to Contribute
+
+### Contributor Covenant Code of Conduct
+
+#### Our Pledge
+
+We as members, contributors, and leaders pledge to make participation in our
+community a harassment-free experience for everyone, regardless of age, body
+size, visible or invisible disability, ethnicity, sex characteristics, gender
+identity and expression, level of experience, education, socio-economic status,
+nationality, personal appearance, race, caste, color, religion, or sexual
+identity and orientation.
+
+We pledge to act and interact in ways that contribute to an open, welcoming,
+diverse, inclusive, and healthy community.
+
+#### Our Standards
+
+Examples of behavior that contributes to a positive environment for our
+community include:
+
+* Demonstrating empathy and kindness toward other people
+* Being respectful of differing opinions, viewpoints, and experiences
+* Giving and gracefully accepting constructive feedback
+* Accepting responsibility and apologizing to those affected by our mistakes,
+  and learning from the experience
+* Focusing on what is best not just for us as individuals, but for the overall
+  community
+
+Examples of unacceptable behavior include:
+
+* The use of sexualized language or imagery, and sexual attention or advances of
+  any kind
+* Trolling, insulting or derogatory comments, and personal or political attacks
+* Public or private harassment
+* Publishing others' private information, such as a physical or email address,
+  without their explicit permission
+* Other conduct which could reasonably be considered inappropriate in a
+  professional setting
+
+#### Enforcement Responsibilities
+
+Community leaders are responsible for clarifying and enforcing our standards of
+acceptable behavior and will take appropriate and fair corrective action in
+response to any behavior that they deem inappropriate, threatening, offensive,
+or harmful.
+
+Community leaders have the right and responsibility to remove, edit, or reject
+comments, commits, code, wiki edits, issues, and other contributions that are
+not aligned to this Code of Conduct, and will communicate reasons for moderation
+decisions when appropriate.
+
+#### Scope
+
+This Code of Conduct applies within all community spaces, and also applies when
+an individual is officially representing the community in public spaces.
+Examples of representing our community include using an official e-mail address,
+posting via an official social media account, or acting as an appointed
+representative at an online or offline event.
+
+### Enforcement
+
+Instances of abusive, harassing, or otherwise unacceptable behavior may be
+reported to the community leaders responsible for enforcement at
+[INSERT CONTACT METHOD].
+All complaints will be reviewed and investigated promptly and fairly.
+
+All community leaders are obligated to respect the privacy and security of the
+reporter of any incident.
+
+### Enforcement Guidelines
+
+Community leaders will follow these Community Impact Guidelines in determining
+the consequences for any action they deem in violation of this Code of Conduct:
+
+### 1. Correction
+
+**Community Impact**: Use of inappropriate language or other behavior deemed
+unprofessional or unwelcome in the community.
+
+**Consequence**: A private, written warning from community leaders, providing
+clarity around the nature of the violation and an explanation of why the
+behavior was inappropriate. A public apology may be requested.
+
+### 2. Warning
+
+**Community Impact**: A violation through a single incident or series of
+actions.
+
+**Consequence**: A warning with consequences for continued behavior. No
+interaction with the people involved, including unsolicited interaction with
+those enforcing the Code of Conduct, for a specified period of time. This
+includes avoiding interactions in community spaces as well as external channels
+like social media. Violating these terms may lead to a temporary or permanent
+ban.
+
+### 3. Temporary Ban
+
+**Community Impact**: A serious violation of community standards, including
+sustained inappropriate behavior.
+
+**Consequence**: A temporary ban from any sort of interaction or public
+communication with the community for a specified period of time. No public or
+private interaction with the people involved, including unsolicited interaction
+with those enforcing the Code of Conduct, is allowed during this period.
+Violating these terms may lead to a permanent ban.
+
+### 4. Permanent Ban
+
+**Community Impact**: Demonstrating a pattern of violation of community
+standards, including sustained inappropriate behavior, harassment of an
+individual, or aggression toward or disparagement of classes of individuals.
+
+**Consequence**: A permanent ban from any sort of public interaction within the
+community.
+
+## Attribution
+
+This Code of Conduct is adapted from the [Contributor Covenant][homepage],
+version 2.1, available at
+[https://www.contributor-covenant.org/version/2/1/code_of_conduct.html][v2.1].
+
+Community Impact Guidelines were inspired by
+[Mozilla's code of conduct enforcement ladder][Mozilla CoC].
+
+For answers to common questions about this code of conduct, see the FAQ at
+[https://www.contributor-covenant.org/faq][FAQ]. Translations are available at
+[https://www.contributor-covenant.org/translations][translations].
+
+[homepage]: https://www.contributor-covenant.org
+[v2.1]: https://www.contributor-covenant.org/version/2/1/code_of_conduct.html
+[Mozilla CoC]: https://github.com/mozilla/diversity
+[FAQ]: https://www.contributor-covenant.org/faq
+[translations]: https://www.contributor-covenant.org/translations
