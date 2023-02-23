@@ -260,6 +260,7 @@
 }
 
 .post__text {
+  overflow: auto;
   font-weight: 300;
   animation: fade-in 0.8s ease-in-out both 0.5s;
 }
@@ -281,6 +282,7 @@
   overflow: hidden;
   animation: fade-in 0.8s ease-in-out both 1s;
 }
+
 
 /** * Animations */
 @keyframes slide-in {
@@ -387,6 +389,12 @@
     .logo {
       display:none;
     }
+  }
+
+  .save-btn-container button {
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
   }
 
 /* SignUp page styles */
