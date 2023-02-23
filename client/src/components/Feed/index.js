@@ -41,14 +41,19 @@ const Feed = () => {
       }
     }
 
-    function handleScrollData() {
-        const feedPromise = feedGen()
-        feedPromise.then((articleData) => {
-            console.log('articleData=', articleData)
+    async function handleScrollData() {
+        const feedPromise = await feedGen()
+        
+
+        setContent((prev) => [...prev, feedPromise])
+        console.log('newcontent=', content)
+
+        // feedPromise.then((articleData) => {
+        //     console.log('articleData=', articleData)
             
-            setContent([...content, articleData])
+        //     setContent([...content, articleData])
     
-        })
+        // })
     }
 
 
