@@ -21,7 +21,7 @@ const Article = (props) => {
     const [deleteArticle, {}] = useMutation(DELETE_ARTICLE)
 
     return(
-        <div>
+        <div id='whole-container'>
             <article className="post">
                 <div>
                     <img src={props.data[4]} className="absolute-bg" />
