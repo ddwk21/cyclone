@@ -20,13 +20,14 @@
     "concurrently": "^7.6.0"
   },
   "dependencies": {
-    "create-react-app": "^5.0.1",
+    "create-react-app": "^1.2.1",
     "dotenv": "^16.0.3",
     "fast-xml-parser": "^4.1.2",
-    "node-fetch": "^3.3.0",
     "google-auth-library": "^8.7.0",
+    "node-fetch": "^3.3.0",
     "react-burger-menu": "^3.0.9",
     "react-google-login": "^5.2.2",
-    "styled-components": "^5.3.6"
+    "styled-components": "^5.3.6",
+    "xml-extract": "^1.1.0"
   }
 }
