@@ -4,13 +4,15 @@
   "description": "An app that feeds users articles from The Encyclopedia Brittanica based on algorithmic user profiles.",
   "main": "server/server.js",
   "scripts": {
+    "build": "cd client && npm run build",
+    "dev": "react-scripts start",
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build",
+    "install": "cd server && npm i && cd ../client && npm i",
     "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
     "start:prod": "node server/server.js",
     "start:dev": "concurrently \"cd server && npx nodemon server\" \"cd client && npm start\"",
-    "install": "cd server && npm i && cd ../client && npm i",
     "seed": "cd server && npm run seed",
-    "build": "cd client && npm run build",
-    "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -27,6 +29,7 @@
     "node-fetch": "^3.3.0",
     "react-burger-menu": "^3.0.9",
     "react-google-login": "^5.2.2",
+    "serve": "^14.2.0",
     "styled-components": "^5.3.6",
     "xml-extract": "^1.1.0"
   }
