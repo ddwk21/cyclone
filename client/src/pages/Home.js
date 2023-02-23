@@ -1,6 +1,9 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
-import ProfileList from '../components/ProfileList';
+
+import ProfileList from '../components/ArticleFeed';
+
+
 import { QUERY_PROFILES } from '../utils/queries';
 import Feed from '../components/Feed';
 

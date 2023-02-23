@@ -33,8 +33,7 @@ const Profile = () => {
   if (!profile?.name) {
     return (
       <h4>
-        You need to be logged in to see your profile page. Use the navigation
-        links above to sign up or log in!
+        Please log in or sign in to view your profile.
       </h4>
     );
   }
