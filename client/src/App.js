@@ -18,6 +18,7 @@ import Footer from './components/Footer';
 import { slide as Menu } from 'react-burger-menu'
 import  { Link } from 'react-router-dom'
 import Auth from './utils/auth';
+import { useState } from 'react';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
