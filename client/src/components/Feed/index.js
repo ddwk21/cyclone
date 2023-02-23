@@ -5,7 +5,8 @@ import feedGen from '../../utils/feedMe'
 // const text = feedGen()
 
 const Feed = () => {
-    const [content, setContent] = useState('')
+    const [content, setContent] = useState([])
+
     const location = useLocation();
     const navigate = useNavigate();
     useEffect(() => {
@@ -21,20 +22,20 @@ const Feed = () => {
     return (
         <article className="post">
             <div>
-                <div className="absolute-bg"></div>
+                <img src={content[4]} className="absolute-bg" />
             </div>
             <div className="post__container">
                 <h2>
-                    <span className="post__title"></span>
+                    <span className="post__title">{content[1]}</span>
                 </h2>
 
                 <div className="post__content">
                     <header>
-                        <time className="post__time"></time>
-                        <h3 className="post__author"></h3>
+                        <time className="post__time">{content[3]}</time>
+                        <h3 className="post__author">{content[2]}</h3>
                     </header>
 
-                    <p className="post__text"></p>
+                    <p className="post__text">{content[0]}</p>
                 </div>
 
             </div>
