@@ -1019,6 +1019,14 @@ a:hover {
   background-color: #57779a;
 }
 
+#liked {
+  background-color: #ee8294;
+}
+
+#liked:hover {
+  background-color: #ffffff;
+}
+
 .btn.btn-danger {
   /* background-color: #e64c66; */
   color: #ffffff;

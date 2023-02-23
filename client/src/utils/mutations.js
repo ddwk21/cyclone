@@ -25,8 +25,8 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ARTICLE = gql`
-  mutation addArticle($articleData: Int) {
-    addArticle(articleData: $articleData) {
+  mutation addArticle($articleId: Int) {
+    addArticle(articleId: $articleId) {
       _id
       name
       email

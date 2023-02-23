@@ -114,9 +114,9 @@ async function fetchXml(articleID, catID) {
     console.log(mediaUrls)
     if(mediaUrls){
         // console.log(text)
-        return [text, title, author, time, mediaUrls]
+        return [text, title, author, time, articleID, mediaUrls]
     } else {
-        return ([text, title, author, time, undefined])
+        return ([text, title, author, time, articleID, undefined])
     }
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
