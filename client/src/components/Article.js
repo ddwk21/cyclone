@@ -11,20 +11,15 @@ const Article = (props) => {
 
     const [addArticle] = useMutation(ADD_ARTICLE)
     const [deleteArticle] = useMutation(DELETE_ARTICLE)
+    
+    let imgSrc;
+    if(props.data[5].length>=5){
+        imgSrc = props.data[5]
+    }else{
+        imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1920px-Grosser_Panda.JPG'
+    }
 
     const articleId = props.data[4]
-
-    const handleImageSrc = () => {
-        let imgSrc = props.data[5]
-        let placeholder = `https://via.placeholder.com/700X1050`
-        
-
-        if (imgSrc === undefined) {
-            imgSrc.push(placeholder)
-        }
-        console.log(imgSrc)
-    }
-    
     
 
     const handleLikeStyle = async () => {
