@@ -25,13 +25,12 @@ export const LOGIN_USER = gql`
 `;
 
 export const ADD_ARTICLE = gql`
-  mutation addArticle($articleId: Int) {
-    addArticle(articleId: $articleId) {
+  mutation addArticle($articleData: Int) {
+    addArticle(articleData: $articleData) {
       _id
       name
       email
-      article {
-        _id
+      likes {
         articleId
       }
     }
@@ -44,8 +43,7 @@ export const DELETE_ARTICLE = gql`
       _id
       name
       email
-      article {
-        _id
+      likes {
         articleId
       }
     }

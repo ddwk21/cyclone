@@ -58,14 +58,27 @@ const resolvers = {
       return { token, profile };
     },
 
-    addArticle: async (parent, args, context, info) => {
-      const article = await Article.create(args)
-      return article
+    addArticle: async (parent, { articleId }, context, info) => {
+      console.log({ articleId })
+      console.log('test')
+      const updatedProfile = await Profile.findByIdAndUpdate(
+        { _id: context.user._id },
+        { $addToSet: { likes: { articleId } } },
+        { new: true }
+      )
+      console.log(updatedProfile)
+      return updatedProfile
     },
 
-    deleteArticle: async (parent, args, context, info) => {
-      await Article.findByIdAndDelete(args._id)
-      return args._id
+    deleteArticle: async (parent, { articleId }, context, info) => {
+      if (context.user) {
+        const updatedProfile = await Profile.findByIdAndUpdate(
+          { _id: context.user._id },
+          { $pull: { likes: articleId } },
+          { new: true }
+        )
+        return updatedProfile
+      }
     },
 
 

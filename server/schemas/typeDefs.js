@@ -6,7 +6,7 @@ const typeDefs = gql`
     name: String
     email: String
     password: String
-    likes: [String]
+    likes: [Article]
   }
 
   type Auth {
@@ -32,9 +32,6 @@ const typeDefs = gql`
     articleTypeId: Int
     title: String
     lastUpdated: String
-    tags: [String]
-    likes: [String]
-    likedBy: [String]
   }
 
   type Query {
@@ -55,20 +52,9 @@ const typeDefs = gql`
       password: String!
     ): Auth
 
-    addArticle(
-      profileId: ID!
-      articleId: Int!
-      articleTypeId: Int
-      title: String!
-      lastUpdated: String
-      tags: [String]
-      likes: [String]
-      LikedBy: [String]
-    ): Article
+    addArticle(articleId: Int): Profile
 
-    deleteArticle(
-      articleId: ID!
-    ): ID
+    deleteArticle(articleId: Int): Profile
 
     removeProfile: Profile
   }
