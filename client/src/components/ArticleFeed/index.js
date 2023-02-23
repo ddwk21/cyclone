@@ -1,7 +1,5 @@
 import React from 'react';
 
-
-
 const ProfileList = () => {
 
   const divStyle = {
