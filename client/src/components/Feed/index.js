@@ -1,45 +1,78 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
 import feedGen from '../../utils/feedMe'
+import Article from '../Article.js'
 
 // const text = feedGen()
+let scrollable = true;
+
+
+
+
+
 
 const Feed = () => {
     const [content, setContent] = useState([])
+    console.log('content:', content)
 
     const location = useLocation();
     const navigate = useNavigate();
-    useEffect(() => {
-        const feedPromise = feedGen()
-        feedPromise.then((content) => {
-            console.log(content)
-            setContent(content)
 
+
+    function handleScroll() {
+
+    
+        if(scrollable)
+        {
+            let pageEnd = document.body.offsetHeight - 50;
+            let breakpoint = window.innerHeight + window.pageYOffset;
+        
+            if (breakpoint >= pageEnd) {
+            handleScrollData();
+            // console.log("loadnew");
+            scrollable = false
+            //rendering logic here
+            const timeoutId = setTimeout(()=>{
+                scrollable=true
+                clearTimeout(timeoutId)
+            
+            }, 800)
+            }
+      }
+    }
+
+    function handleScrollData() {
+        const feedPromise = feedGen()
+        feedPromise.then((articleData) => {
+            console.log('articleData=', articleData)
+            
+            setContent([...content, articleData])
+    
         })
+    }
+
+
+
+    useEffect(() => {
+
+
+
+        window.addEventListener("scroll", handleScroll);
+        return() => window.removeEventListener('scroll', handleScroll)
+ 
     }, [])
 
 
     return (
-        <article className="post">
-            <div>
-                <img src={content[4]} className="absolute-bg" />
-            </div>
-            <div className="post__container">
-                <h2>
-                    <span className="post__title">{content[1]}</span>
-                </h2>
+        <div>
+            
+            {
+                content.map((articleData) =>{
 
-                <div className="post__content">
-                    <header>
-                        <time className="post__time">{content[3]}</time>
-                        <h3 className="post__author">{content[2]}</h3>
-                    </header>
-
-                    <p className="post__text">{content[0]}</p>
-                </div>
-
-            </div>
-        </article>
+                    return(<Article data={articleData}/>)
+                })   
+            }
+        </div>
     );
 };
 

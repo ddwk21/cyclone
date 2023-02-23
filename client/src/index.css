@@ -1019,7 +1019,7 @@ a:hover {
 }
 
 .btn.btn-danger {
-  background-color: #e64c66;
+  /* background-color: #e64c66; */
   color: #ffffff;
 }
 
@@ -1110,7 +1110,7 @@ form .form-group {
   margin: 0.625rem 0;
 }
 
-form ,
+form,
 form .form-textarea {
   display: block;
 }
@@ -1883,4 +1883,3 @@ Note: Beware of modifying this element as it can break the animations - you shou
   background: rgba(0, 0, 0, 0.3);
   position: absolute;
 }
-
