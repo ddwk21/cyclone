@@ -19,12 +19,8 @@ const profileSchema = new Schema({
     required: true,
     minlength: 5,
   },
-  skills: [
-    {
-      type: String,
-      trim: true,
-    },
-  ],
+  likes: [String],
+
 });
 
 // set up pre-save middleware to create password
@@ -45,3 +41,6 @@ profileSchema.methods.isCorrectPassword = async function (password) {
 const Profile = model('Profile', profileSchema);
 
 module.exports = Profile;
+
+// TAG
+// likes, likedBy

@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   ApolloClient,
   InMemoryCache,
@@ -7,6 +7,7 @@ import {
 } from '@apollo/client';
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import "./components/css/App.css"
 
 import Home from './pages/Home';
 import Profile from './pages/Profile';
@@ -14,6 +15,9 @@ import Signup from './pages/Signup';
 import Login from './pages/Login';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { slide as Menu } from 'react-burger-menu'
+import { Link } from 'react-router-dom'
+
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -36,32 +40,41 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 });
 
+const Burger = () => {
+  return (
+    <Menu>
+      <Link to="/">Home</Link>
+      <br />
+      <Link to="/login">Login</Link>
+      <br />
+      <Link to="/signup">Signup</Link>
+    </Menu>
+  )
+}
+
 function App() {
   return (
     <ApolloProvider client={client}>
       <Router>
         <div className="flex-column justify-flex-start min-100-vh">
           <Header />
+          <Burger></Burger>
           <div className="container">
             <Routes>
-              <Route 
-                path="/" 
+              <Route
+                path="/"
                 element={<Home />}
               />
-              <Route 
-                path="/login" 
+              <Route
+                path="/login"
                 element={<Login />}
               />
-              <Route 
-                path="/signup" 
+              <Route
+                path="/signup"
                 element={<Signup />}
               />
-              <Route 
-                path="/me" 
-                element={<Profile />}
-              />
-              <Route 
-                path="/profiles/:profileId"
+              <Route
+                path="/me"
                 element={<Profile />}
               />
             </Routes>
