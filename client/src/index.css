@@ -411,9 +411,6 @@ dl {
   margin-bottom: 1rem;
 }
 
-label {
-  display: inline-block;
-}
 
 input,
 select,
@@ -899,7 +896,7 @@ a:hover {
 }
 
 .text-light {
-  color: #d9e9e8 !important;
+  color: #F7F9FB !important;
 }
 
 .text-dark {
@@ -937,7 +934,7 @@ a:hover {
 }
 
 .bg-dark {
-  background-color: #1a1a1a !important;
+  background-color: #8fc1e3 !important;
 }
 
 .bg-white {
@@ -1030,14 +1027,6 @@ a:hover {
   background-color: #ee8294;
 }
 
-.btn.btn-info {
-  background-color: #1bbc9b;
-  color: #ffffff;
-}
-
-.btn.btn-info:hover {
-  background-color: #31e1bd;
-}
 
 .btn.btn-light {
   background-color: #d9e9e8;
@@ -1121,7 +1110,7 @@ form .form-group {
   margin: 0.625rem 0;
 }
 
-form .form-input,
+form ,
 form .form-textarea {
   display: block;
 }
@@ -1135,14 +1124,14 @@ form select {
   background-position-y: 50%;
 }
 
-form label,
+/* form label,
 form .form-label {
   display: inline-block;
   font-size: 1.2rem;
   margin: 0.625rem 0 0.25rem 0.3rem;
 }
 
-form .form-input {
+form  {
   width: 100%;
   padding: 0.75rem;
   color: #1a1a1a;
@@ -1151,11 +1140,11 @@ form .form-input {
   font-size: 1.2rem;
   border: 1px solid #484848;
   border-radius: 0.3rem;
-}
+} */
 
-form .form-input.form-input-squared {
+/* form -squared {
   border-radius: 0;
-}
+} */
 
 form [type='checkbox'],
 form [type='radio'] {
@@ -1817,12 +1806,12 @@ label form [type='radio'] {
 
 /* Color/shape of burger icon bars */
 .bm-burger-bars {
-  background: #373a47;
+  background: #f7f9fb;
 }
 
 /* Color/shape of burger icon bars on hover*/
 .bm-burger-bars-hover {
-  background: #687864;
+  background: #8fc1e3;
 }
 
 /* Position and sizing of clickable cross button */
@@ -1847,25 +1836,46 @@ Note: Beware of modifying this element as it can break the animations - you shou
 
 /* General sidebar styles */
 .bm-menu {
-  background: #373a47;
+  background: #508575;
   padding: 2.5em 1.5em 0;
   font-size: 1.15em;
 }
 
 /* Morph shape necessary with bubble or elastic */
 .bm-morph-shape {
-  fill: #373a47;
+  fill: #508575;
 }
 
 /* Wrapper for item list */
 .bm-item-list {
   color: #b8b7ad;
   padding: 0.8em;
+  justify-content: center;
 }
 
 /* Individual item */
 .bm-item {
   display: inline-block;
+  position: relative;
+  color: #0087ca;
+}
+
+.bm-item::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  transform: scaleX(0);
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #0087ca;
+  transform-origin: bottom right;
+  transition: transform 0.25s ease-out;
+}
+
+.bm-item:hover::after {
+  transform: scaleX(1);
+  transform-origin: bottom left;
 }
 
 /* Styling of overlay */

@@ -8,7 +8,7 @@
     "start:prod": "node server/server.js",
     "start:dev": "concurrently \"cd server && npx nodemon server\" \"cd client && npm start\"",
     "install": "cd server && npm i && cd ../client && npm i",
-    "seed": "cd server && npm run seed",
+    "seed": "cd server && npm run seeds",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
     "test": "echo \"Error: no test specified\" && exit 1"
