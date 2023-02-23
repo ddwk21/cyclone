@@ -97,6 +97,11 @@ body {
 }
 
 /** * Components */
+
+#whole-container {
+  margin-bottom: 15em;
+}
+
 .post {
   min-height: 100vh;
   width: 100%;
@@ -206,7 +211,8 @@ body {
 .post__container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  /* justify-content: space-between; */
   /* padding: 5em; */
   overflow-y: auto;
 }
