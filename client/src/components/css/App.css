@@ -103,7 +103,7 @@ body {
 }
 
 .post {
-  min-height: 100vh;
+  /* min-height: 100vh; */
   width: 100%;
   border: 0.5em solid #f7f9fb;
 }
@@ -241,11 +241,11 @@ body {
   padding: 5em 0;
 }
 
-@media (min-width: 54em) {
+/* @media (min-width: 54em) {
   .post__content {
     padding: 0 1em;
   }
-}
+} */
 
 .post__time {
   display: inline-block;
