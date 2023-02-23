@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileList = () => {
+const ArticleFeed = () => {
 
   const divStyle = {
     backgroundImage: 'url(' + ('https://source.unsplash.com/f9C8ytxaItI/2000x1200') + ')',
@@ -43,4 +43,4 @@ const ProfileList = () => {
   );
 };
 
-export default ProfileList;
+export default ArticleFeed;

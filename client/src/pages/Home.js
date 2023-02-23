@@ -1,7 +1,7 @@
 import React from 'react';
 import { useQuery } from '@apollo/client';
 
-import ProfileList from '../components/ArticleFeed';
+import ArticleFeed from '../components/ArticleFeed';
 
 
 import { QUERY_PROFILES } from '../utils/queries';
@@ -18,7 +18,7 @@ const Home = () => {
           {loading ? (
             <div>Loading...</div>
           ) : (<>
-            <ProfileList
+            <ArticleFeed
               profiles={profiles}
               title="This is a test section for the article loading area"
             />
