@@ -2,7 +2,6 @@ import React, { Component, useState } from 'react'
 
 import { useMutation } from '@apollo/client';
 import { ADD_ARTICLE, DELETE_ARTICLE } from '../utils/mutations'
-import logo from '../assets/encyclone-logo.png'
 
 
 
@@ -14,10 +13,10 @@ const Article = (props) => {
     const [deleteArticle] = useMutation(DELETE_ARTICLE)
     
     let imgSrc;
-    if(props.data[5].length>=5){
+    if(props.data[5][0]){
         imgSrc = props.data[5]
     }else{
-        imgSrc = logo
+        imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1920px-Grosser_Panda.JPG'
     }
 
     const articleId = props.data[4]
