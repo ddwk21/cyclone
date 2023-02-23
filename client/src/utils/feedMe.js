@@ -1,4 +1,5 @@
 import xmlExtract from "xml-extract";
+import moment from 'moment'
 
 const { XMLParser } = require("fast-xml-parser");
 const { parseXml } = require('@rgrove/parse-xml');
@@ -43,7 +44,6 @@ async function getXML(category, articleID) {
     } else if (category == 6) {
         catID = process.env.REACT_APP_PLACE_KEY
     }
-    console.log(catID)
     let XML = await fetchXml(articleID, catID)
     return (XML)
 }
@@ -76,8 +76,16 @@ async function fetchXml(articleID, catID) {
     //         throw new Error(error)
     //     }
     // })
-    console.log(data2.article.p)
+    console.log(data2.article)
     console.log(data.document.text)
+    const text = data.document.text
+    const title = data2.article.title
+    const author = data2.article.copyright
+    const nonTime = data2.article['@_lastupdate']
+    const time = moment(nonTime).format('MMM D YYYY')
+    const newText = text.split(title)
+    console.log(newText)
+    //if title.length split is 1, remove first word, if 2 remove first 2 words
     
     // let snowballStr = '';
     // for(let i; i<data.length; i++){
@@ -105,8 +113,11 @@ async function fetchXml(articleID, catID) {
     //     mediaUrl = baseMediaUrl+data2.article.p[0].assembly.media['@_url']
     console.log(mediaUrls)
     if(mediaUrls){
-        return (data.document.text, mediaUrls)
-    }else return (data)
+        console.log(text)
+        return [text, title, author, time, mediaUrls]
+    } else {
+        return (text)
+    }
     //If P is an array, get it like this, if P is not an array, just go through dot notation to assembly
 }
 

@@ -23,3 +23,31 @@ export const LOGIN_USER = gql`
     }
   }
 `;
+
+export const ADD_ARTICLE = gql`
+  mutation addArticle($articleId: Int) {
+    addArticle(articleId: $articleId) {
+      _id
+      name
+      email
+      article {
+        _id
+        articleId
+      }
+    }
+  }
+`;
+
+export const DELETE_ARTICLE = gql`
+  mutation deleteArticle($articleId: Int) {
+    deleteArticle(articleId: $articleId) {
+      _id
+      name
+      email
+      article {
+        _id
+        articleId
+      }
+    }
+  }
+`;

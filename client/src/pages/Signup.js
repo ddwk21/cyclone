@@ -41,10 +41,10 @@ const Signup = () => {
   };
 
   return (
-    <main className="flex-row justify-center mb-4">
-      <div className="col-12 col-lg-10">
-        <div className="card">
-          <h4 className="card-header bg-dark text-light p-2">Sign Up</h4>
+    <main className="">
+      <div className="">
+        <div className="signup-container">
+          <h4 className="signup-header">Sign Up</h4>
           <div className="card-body">
             {data ? (
               <p>
@@ -52,33 +52,37 @@ const Signup = () => {
                 <Link to="/">back to the homepage.</Link>
               </p>
             ) : (
-              <form onSubmit={handleFormSubmit}>
-                <input
-                  className="form-input"
-                  placeholder="Your username"
-                  name="name"
-                  type="text"
-                  value={formState.name}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="Your email"
-                  name="email"
-                  type="email"
-                  value={formState.email}
-                  onChange={handleChange}
-                />
-                <input
-                  className="form-input"
-                  placeholder="******"
-                  name="password"
-                  type="password"
-                  value={formState.password}
-                  onChange={handleChange}
-                />
+              <form onSubmit={handleFormSubmit} >
+                <div className="signup-box">
+                  <input
+                    className="signup-username"
+                    type="text"
+                    name="name"
+                    value={formState.name}
+                    onChange={handleChange}
+                  />
+                  <label>Username</label>
+                </div>
+                <div className="signup-box">
+                  <input
+                    className="signup-email"
+                    type="email"
+                    name="email"
+                    value={formState.email}
+                    onChange={handleChange}
+                  />
+                  <label>Email</label>
+                </div>
+                <div className="signup-box">
+                  <input className="signup-password"
+                    name="password"
+                    type="password"
+                    value={formState.password}
+                    onChange={handleChange} />
+                  <label>Password</label>
+                </div>
                 <button
-                  className="btn btn-block btn-info"
+                  className="signup-btn"
                   style={{ cursor: 'pointer' }}
                   type="submit"
                 >
@@ -99,43 +103,5 @@ const Signup = () => {
   );
 };
 
-
-
-// import { GoogleLogin } from 'react-google-login';
-
-// function SignupPage() {
-//   const responseGoogle = (response) => {
-//     console.log(response);
-//   };
-
-//   return (
-//     <div>
-//       <h1>Signup Page</h1>
-//       <GoogleLogin
-//         clientId="YOUR_CLIENT_ID"
-//         buttonText="Signup with Google"
-//         onSuccess={responseGoogle}
-//         onFailure={responseGoogle}
-//         cookiePolicy={'single_host_origin'}
-//       />
-//     </div>
-//   );
-// }
-
-
-
-
-// const responseGoogle = (response) => {
-//   console.log(response);
-//   const profile = response.profileObj;
-//   const user = {
-//     name: profile.name,
-//     email: profile.email,
-//     image: profile.imageUrl,
-//     provider: 'google',
-//     providerId: profile.googleId,
-//   };
-//   // Call your signup API to create a new user account
-// };
 
 export default Signup;
