@@ -987,6 +987,7 @@ a:hover {
 
 .btn:hover {
   background-color: #cecece;
+  cursor: pointer;
 }
 
 .btn.btn-squared {
