@@ -2,6 +2,7 @@ import React, { Component, useState } from 'react'
 
 import { useMutation } from '@apollo/client';
 import { ADD_ARTICLE, DELETE_ARTICLE } from '../utils/mutations'
+import logo from '../assets/encyclone-logo.png'
 
 
 
@@ -16,7 +17,7 @@ const Article = (props) => {
     if(props.data[5].length>=5){
         imgSrc = props.data[5]
     }else{
-        imgSrc = 'https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Grosser_Panda.JPG/1920px-Grosser_Panda.JPG'
+        imgSrc = logo
     }
 
     const articleId = props.data[4]
@@ -48,7 +49,7 @@ const Article = (props) => {
         <div id='whole-container'>
             <article className="post">
                 <div>
-                    <img src={props.data[5]} className="absolute-bg" />
+                    <img src={imgSrc} className="absolute-bg" />
                 </div>
                 <div className="post__container">
                     <h2>
