@@ -24,7 +24,9 @@ const ArticleFeed = () => {
                 <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/ddwk21'>Mitchell Leimeux</a><br />
                 <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/Krenbot'>Steven Krenn</a> <br />
                 <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/JeremyBukofzer/'>Jeremy Bukofzer</a> <br />
-                <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/Hunter-Mayer/'>Hunter Mayer</a></h3>
+                <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/Hunter-Mayer/'>Hunter Mayer</a><br />
+                <a style={{ padding: 0, color: '#000000', letterSpacing: 0, }} href='https://github.com/richiethie/'>Richie Thiesfeldt</a>
+              </h3>
             </header>
 
             <p className="post__text">Welcome to Encyclone!<br /><br />Ever find yourself going down a rabbit hole of encyclopedia articles? With Encyclone, you can endlessly scroll through random articles based off of nine categories, populating the page with relevant media and text from the Encyclopedia Britannica’s very own API. You can like and save articles of particular interest to your profile, so that you can revisit them again in the future. </p>
