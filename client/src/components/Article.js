@@ -1,4 +1,4 @@
-import React, {Component, useState} from 'react'
+import React, { Component, useState } from 'react'
 
 import { useMutation } from '@apollo/client';
 import { ADD_ARTICLE, DELETE_ARTICLE } from '../utils/mutations'
@@ -49,7 +49,7 @@ const Article = (props) => {
 
     
 
-    return(
+    return (
         <div id='whole-container'>
             <article className="post">
                 <div>
@@ -61,12 +61,8 @@ const Article = (props) => {
                     </h2>
 
                     <div className="post__content">
-                        <header>
-                            <time className="post__time">{props.data[3]}</time>
-                            <h3 className="post__author">{props.data[2]}</h3>
-                        </header>
 
-                        <p className="post__text">{props.data[0]}</p>
+                        <p className="post__text" style={{ paddingTop: '1em' }}>{props.data[0]}</p>
                     </div>
 
                 </div>
