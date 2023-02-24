@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "An app that feeds users articles from The Encyclopedia Brittanica based on algorithmic user profiles.",
   "main": "server/server.js",
+  "homepage": "",
   "scripts": {
     "build": "cd client && npm run build",
     "dev": "react-scripts start",
