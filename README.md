@@ -22,13 +22,10 @@ Encyclone can be found deployed on Heroku at the following link: </br>
 Within Encyclone you are able to navigate the pages using the hamburger menu in the top left. From there you can see the homepage, profile, signup and login pages. 
 
 Visiting the site for the first time allows users to login or sign up.
-![login](add image of login page view)
+![login](/assets/cyclone_login.PNG)
 
 The homepage allows the user to endlessly scroll through encyclopedia entries.
-![home page](add image of home page view)
-
-The profile page allows a user to review encyclopedia entries that they have liked and saved.
-![profile page](add image of home page view)
+![home page](/assets/cyclone_homepage.PNG)
 
 ## Badges
 
@@ -37,6 +34,7 @@ The profile page allows a user to review encyclopedia entries that they have lik
 ![MIT](https://img.shields.io/badge/license-MIT-green)
 
 ## Features
+
 - Endless Scrolling
     - Seamless scrolling so you can keep browsing articles without any interruptions.
 <br>
