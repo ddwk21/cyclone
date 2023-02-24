@@ -15,7 +15,7 @@ Ever find yourself going down rabbit holes of encyclopedia articles? Encyclone l
 ## Installation
 
 Encyclone can be found deployed on Heroku at the following link: </br>
-=> [Encyclone](Add Heroku Link Here) <= 
+=> [Encyclone](https://fierce-sands-41595.herokuapp.com/) <= 
 
 ## Usage
 
